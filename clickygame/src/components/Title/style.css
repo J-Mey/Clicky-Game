@@ -1,11 +1,9 @@
 .title {
-    text-align: center
+    text-align: center;
+    color: white;
+    background:black
 }
 
-h3 {
-    text-align: center
-}
-
-h4 {
-    text-align: center
+h1 {
+    color: dodgerblue
 }

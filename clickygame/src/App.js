@@ -45,7 +45,7 @@ class App extends Component {
         score: 0,
         clickedCharacters: []
       });
-      alert("Sorry you clicked the same fighter twice, try again!")
+      alert("Sorry you picked the same fighter twice, try again!")
     }  
     if (score > topScore) {
       this.setState({
