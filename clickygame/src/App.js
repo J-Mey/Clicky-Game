@@ -30,11 +30,11 @@ class App extends Component {
     let score = this.state.score;
     let topScore = this.state.topScore;
 
-    if(clickedCharacters.indexOf(id) === -1) {
+    if (clickedCharacters.indexOf(id) === -1) {
       clickedCharacters.push(id);
       this.handleIncrement();
       this.characterShuffle();
-    }else if(this.state.score === 12) {
+    } else if (this.state.score === 12) {
       alert("You win!")
       this.setState({
         score: 0,
@@ -46,17 +46,17 @@ class App extends Component {
         clickedCharacters: []
       });
       alert("Sorry you picked the same fighter twice, try again!")
-    }  
+    }
+
     if (score > topScore) {
-      this.setState({
-        topScore: score
-      })
+      topScore = score;
+      this.setState({ topScore })
     }
   };
 
   // function to increment 1 point to score
   handleIncrement = () => {
-    this.setState({ score: this.state.score +1 });
+    this.setState({ score: this.state.score + 1 });
   }
 
   // function to call shuffleImage function for characters
@@ -66,13 +66,12 @@ class App extends Component {
 
 
   render() {
-    return (
-     
+    return (    
       <Wrapper>
          <Title 
             score={this.state.score}
             message={this.state.message}
-            topScore={this.state.score} />
+            topScore={this.state.topScore} />
         <div class="container"> 
           <div class="row">
             {this.state.characters.map(character => (
@@ -87,8 +86,7 @@ class App extends Component {
             </div>
         </div>
       </Wrapper>
-    );
-  
+    ); 
   }
 }
 
